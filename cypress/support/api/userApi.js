@@ -4,7 +4,7 @@ export const createUser = (payload) =>{
     return cy.request({
         method: 'POST',
         url: 'https://reqres.in/api/users',
-        headers: {'x-api-key': Cypress.env('apiKey')},
+        headers: {'x-api-key': Cypress.env('API_KEY')},
         body: payload
     })
 }
@@ -15,7 +15,7 @@ export const getUser = () => {
     return cy.request({
         method: 'GET',
         url: 'https://reqres.in/api/users?page=2',
-        headers: {'x-api-key': Cypress.env('apiKey')}
+        headers: {'x-api-key': Cypress.env('API_KEY')}
 
     })
 }
@@ -25,7 +25,7 @@ export const deleteUser = (id) => {
     return cy.request({
         method: 'DELETE',
         url: `https://reqres.in/api/users/${id}`,
-        headers: {'x-api-key': Cypress.env('apiKey')}
+        headers: {'x-api-key': Cypress.env('API_KEY')}
     })
 
 }
@@ -35,7 +35,7 @@ export const updateUser = (id,payload) => {
     return cy.request({
         method: 'PUT',
         url: `https://reqres.in/api/users/${id}`,
-        headers: {'x-api-key': Cypress.env('apiKey')},
+        headers: {'x-api-key': Cypress.env('API_KEY')},
         body: payload
     })
 
