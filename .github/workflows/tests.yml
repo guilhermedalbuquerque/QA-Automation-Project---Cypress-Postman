@@ -1,44 +1,44 @@
 name: QA Tests CI
 
 on:
-push:
-pull_request:
+  push:
+  pull_request:
 
 jobs:
-test:
-runs-on: ubuntu-latest
+  test:
+    runs-on: ubuntu-latest
 
 
-steps:
-  - name: Checkout do código
-    uses: actions/checkout@v4
+    steps:
+      - name: Checkout do código
+        uses: actions/checkout@v4
 
-  - name: Setup Node.js
-    uses: actions/setup-node@v4
-    with:
-      node-version: 18
-    
-  - name: Instalar dependências
-    run: npm install
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 18
+        
+      - name: Instalar dependências
+        run: npm install
 
-  #----------------------------------------- Cypress --------------------------------------------------
+      # ---------------------- Cypress ----------------------
 
-  - name: Instalar Cypress (binário)
-    run: npx cypress install
+      - name: Instalar Cypress (binário)
+        run: npx cypress install
 
-  - name: Rodar headless Cypress
-    run: npx cypress run
-    env:
-      CYPRESS_API_KEY: ${{ secrets.API_KEY }}
+      - name: Rodar Cypress
+        run: npx cypress run
+        env:
+          CYPRESS_API_KEY: ${{ secrets.API_KEY }}
 
-  #------------------------------------------ Postman (newman) -------------------------------------------------
-  
-  - name: Instalar newman
-    run: npm install -g newman
+      # ---------------------- Postman ----------------------
 
-  - name: Rodar collection do Postman
-    run: |
-      newman run postman_collection.json \
-      -e postman_environment.json \
-      --env-var "api_key=${{ secrets.API_KEY }}"
+      - name: Instalar Newman
+        run: npm install -g newman
+
+      - name: Rodar coleção Postman
+        run: |
+          newman run postman_collection.json \
+          -e postman_environment.json \
+          --env-var "api_key=${{ secrets.API_KEY }}"
 
