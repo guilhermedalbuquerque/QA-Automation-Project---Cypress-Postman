@@ -1,6 +1,6 @@
 # QA Automation Project - Cypress + Postman
 
-![CI](https://github.com/guilhermedalbuquerque/qa-cypress-project/actions/workflows/tests.yml/badge.svg)
+[![QA Tests](https://github.com/guilhermedalbuquerque/QA-Automation-Project---Cypress-Postman/actions/workflows/tests.yml/badge.svg)](https://github.com/guilhermedalbuquerque/QA-Automation-Project---Cypress-Postman/actions)
 
 Projeto de automação de testes focado em **API Testing**, utilizando **Cypress** para automação e **Postman** para validação e documentação de endpoints, com execução automatizada em **CI/CD (GitHub Actions)**.
 
