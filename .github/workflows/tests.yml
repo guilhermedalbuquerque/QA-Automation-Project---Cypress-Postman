@@ -23,11 +23,13 @@ jobs:
 
       # ---------------------- Cypress ----------------------
 
-      - name: Instalar Cypress (binário)
-        run: npx cypress install
+      - name: Rodar Cypress 
+        uses: cypress-io/github-action@v6
+        with:
+          install: true
 
-      - name: Rodar Cypress
-        run: npx cypress run
+          runTests: true
+
         env:
           CYPRESS_API_KEY: ${{ secrets.API_KEY }}
 
