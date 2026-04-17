@@ -257,13 +257,13 @@ jobs:
 
 # Diferenciais do projeto
 
-✔ Integração Cypress + Postman
-✔ Cobertura completa de CRUD
-✔ Testes positivos e negativos
-✔ Uso de variáveis de ambiente
-✔ Organização profissional de documentação
-✔ Uso de custom commands
-✔ Execução automatizada em CI/CD
+- Integração Cypress + Postman
+- Cobertura completa de CRUD
+- Testes positivos e negativos
+- Uso de variáveis de ambiente
+- Organização profissional de documentação
+- Uso de custom commands
+- Execução automatizada em CI/CD
 
 ---
 
