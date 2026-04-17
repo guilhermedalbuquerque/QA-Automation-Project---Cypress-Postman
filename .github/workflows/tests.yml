@@ -41,4 +41,4 @@ steps:
       newman run postman_collection.json \
       -e postman_environment.json \
       --env-var "api_key=${{ secrets.API_KEY }}"
-```
+
